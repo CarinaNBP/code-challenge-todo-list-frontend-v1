@@ -1,17 +1,17 @@
 import React from 'react';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import ToDoCreatePage from 'pages/ToDoCreate/ToDoCreate';
 import ToDoListPage from 'pages/ToDoList/ToDoList';
 
-const Routes = () => {
+const RoutesIndex = () => {
   return (
-    <>
-      <BrowserRouter>
-        <Route exact path="/" component={ToDoListPage} />
-        <Route exact path="/create" component={ToDoCreatePage} />
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ToDoListPage />} />
+        <Route path="/create" element={<ToDoCreatePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
-export default Routes;
+export default RoutesIndex;
